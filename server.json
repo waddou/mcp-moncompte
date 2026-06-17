@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.json",
+  "name": "io.github.waddou/mcp-moncompte",
+  "description": "Recherche et lecture des guides de connexion de moncompte.org (MCP, lecture seule).",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/waddou/mcp-moncompte",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp-moncompte.wadie.workers.dev/mcp"
+    },
+    {
+      "type": "sse",
+      "url": "https://mcp-moncompte.wadie.workers.dev/sse"
+    }
+  ]
+}
