@@ -30,7 +30,11 @@ mcp-publisher publish
 
 > Vérifier ensuite la présence sur le registre. Pour republier après une montée de version,
 > incrémenter `version` dans `server.json` puis relancer `mcp-publisher publish`.
-> En CI (optionnel) : `mcp-publisher login github-oidc` puis `publish`, sans secret.
+> **CI automatique** : le workflow `.github/workflows/publish-registry.yml` republie au registre
+> (OIDC, sans secret) à chaque push sur `main` modifiant `server.json` — donc **bump `version`
+> puis push** suffit. Déclenchable aussi à la main (onglet Actions → *Publish to MCP Registry*).
+> ⚠️ Le tout premier `publish` doit être fait **manuellement** une fois (`mcp-publisher login github`)
+> pour valider la propriété du namespace ; ensuite la CI prend le relais.
 
 ## c) Smithery
 
