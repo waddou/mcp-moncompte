@@ -1,0 +1,19 @@
+# Smithery — https://smithery.ai
+#
+# Ce serveur MCP est DÉJÀ déployé (Cloudflare Workers) :
+#   Streamable HTTP : https://mcp-moncompte.wadie.workers.dev/mcp
+#   SSE             : https://mcp-moncompte.wadie.workers.dev/sse
+#
+# Il n'a besoin d'AUCUNE configuration (lecture seule, pas de clé d'API) :
+# configSchema est donc vide. Le serveur implémente le transport Streamable HTTP
+# et expose ses outils sur /mcp.
+#
+# NB : `type: http` sert aussi à Smithery pour héberger un serveur depuis le repo.
+# Comme celui-ci est déjà hébergé sur Cloudflare, le plus simple est de le RÉFÉRENCER
+# sur smithery.ai comme « serveur distant » en pointant l'URL ci-dessus.
+startCommand:
+  type: http
+  configSchema:
+    type: object
+    properties: {}
+    required: []
